@@ -4,6 +4,27 @@
         <title>Getting Started: Serving Web Content</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     </head>
+    <head>
+        <title>Hello jQuery</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="jQueryController.js"></script>
+    </head>
+
+    <p>Enter names in the fields, then click "Submit" to submit the form:</p>
+
+    <form id="frm1" action="/action_page.php">
+        Name: <input type="text" name="name"><br>
+        Address: <input type="text" name="address"><br>
+        Phone Number: <input type="text" name="phoneNumber"><br><br>
+        <input type="button" onclick="myFunction()" value="Add buddy">
+    </form>
+
+    <script>
+        function myFunction() {
+            document.getElementById("frm1").submit();
+        }
+    </script>
+
     <body>
         <table>
             <tr>
