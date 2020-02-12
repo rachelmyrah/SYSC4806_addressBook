@@ -4,27 +4,10 @@
         <title>Getting Started: Serving Web Content</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     </head>
-    <head>
-        <title>Hello jQuery</title>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script src="jQueryController.js"></script>
-    </head>
-
-    <p>Enter names in the fields, then click "Submit" to submit the form:</p>
-
-    <form id="frm1" action="/action_page.php">
-        Name: <input type="text" name="name"><br>
-        Address: <input type="text" name="address"><br>
-        Phone Number: <input type="text" name="phoneNumber"><br><br>
-        <input type="button" onclick="myFunction()" value="Add buddy">
+    <form action="/book">
+        Address Book ID: <input type="number" name="id" id="id"><br>
+        <input type="submit" value="Submit"><br>
     </form>
-
-    <script>
-        function myFunction() {
-            document.getElementById("frm1").submit();
-        }
-    </script>
-
     <body>
         <table>
             <tr>
@@ -39,4 +22,11 @@
             </tr>
         </table>
     </body>
+    <form action="/book" method="post" th:object="${buddyInfo}">
+        <br>
+        Name: <input type="text" name="name" id="name" th:field="*{name}"><br><br>
+        Address: <input type="text" name="address" id="address" th:field="*{address}"><br><br>
+        Phone Number: <input type="text" name="phoneNumber" id="phoneNumber" th:field="*{phoneNumber}"><br><br>
+        <input type="submit" value="Add Buddy" id="addButton"><br><br>
+    </form>
 </html>
